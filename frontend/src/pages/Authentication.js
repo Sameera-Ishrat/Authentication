@@ -8,7 +8,6 @@ function AuthenticationPage() {
 export default AuthenticationPage;
 
 export const action = async({request,params}) => {
-const data = await request.formData();
 
 //grab the mode from the searchParams
 const searchParams = new URL(request.url).searchParams;
@@ -18,12 +17,13 @@ if(mode !== 'login' && mode !== 'signup'){
   throw json({message:'Unsupported mode'},{status:422})
 }
 
+const data = await request.formData();
 const authData = {
   email : data.get('email'),
   password : data.get('password')
 }
 
-const response = await fetch('http://localhost:3004/' + mode,{
+const response = await fetch('http://localhost:8080/' + mode,{
   method:'POST',
   body:JSON.stringify(authData),
   headers : {
@@ -39,6 +39,22 @@ if(response.status === 422 || response.status === 401) {
 if(!response.ok) {
   throw json({message:'Couldnot authenticate user'},{status:500})
 }
+
+// get the token from the backend
+
+const resData = await response.json();
+const token = resData.token;
+
+///store the token on localstorage
+
+localStorage.setItem('token' , token);
+
+//for automatic logout
+
+const expiration = new Date();
+expiration.setHours(expiration.getHours() + 1);
+localStorage.setItem('expiration' , expiration.toISOString())
+
 return redirect('/')
 
 }
