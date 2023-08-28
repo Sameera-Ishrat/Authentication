@@ -1,12 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": []
-}
+{"events":[{"title":"Second Event","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","date":"2023-08-23","description":"My second Event","id":"1de48b75-e125-4533-8b5f-3bea260097b7"},{"title":"My new Event","image":"https://tse3.mm.bing.net/th?id=OIP.rD2__f73-oUBzVztvJJ3CQHaE8&pid=Api&P=0&h=180","date":"2023-08-23","description":"A new Event to attend with the family","id":"ce86e2d0-b426-40a3-98c6-9d7d9e757916"}],"users":[{"email":"sameera.sulaiman@gmail.com","password":"$2a$12$EJQ39b6/HITfv11zpFilheqk/JYJoanPXXmkXfwmKSknubSVqwN0i","id":"682ccd0b-273a-410c-9bec-e14c9ac3e700"}]}
