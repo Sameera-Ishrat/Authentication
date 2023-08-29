@@ -21,9 +21,13 @@ if(token === 'EXPIRED'){
 const tokenDuration = getTokenDuration();
 console.log(tokenDuration,"TOKEN DURATION");
 
-setTimeout(() => {
+const timer = setTimeout(() => {
 submit(null,{action:'/logout' , method:'POST'})
 },tokenDuration)
+return () => {
+  clearTimeout(timer);
+}
+
 },[token,submit]) 
 
 return (
